@@ -12,7 +12,7 @@ public class VisitorDeserializer implements JsonDeserializer<Visitor> {
         Visitor visitor = new Visitor();
         List<Book> books = new ArrayList<Book>();
 
-        json.get("books").getAsJsonArray().forEach(book -> {books.add((Book) context.deserialize(book, Book.class));});
+        json.get("favoriteBooks").getAsJsonArray().forEach(book -> {books.add((Book) context.deserialize(book, Book.class));});
 
         visitor.setName(json.get("name").getAsString());
         visitor.setSurname(json.get("surname").getAsString());
